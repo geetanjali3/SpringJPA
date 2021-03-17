@@ -24,10 +24,11 @@ public class OrmLearnApplication {
 
 		countryService = context.getBean(CountryService.class);
 		testGetAllCountries();
-		testGetAllCountriesTest();
+		
 		testAddCountry();
 		testUpdateCountry();
 		testDeleteCountry();
+		testGetAllCountriesTest();
 	}
 
 	// METHOD TO TEST GETALLCOUNTRIES() IN COUNTRY SERVICE
