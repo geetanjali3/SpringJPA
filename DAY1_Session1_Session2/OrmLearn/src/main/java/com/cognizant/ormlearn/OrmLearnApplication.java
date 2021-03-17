@@ -44,11 +44,11 @@ public class OrmLearnApplication {
 	}
 
 	// METHOD TO TEST FINDCOUNTRYBYCODE() IN COUNTRY SERVICE
-	private static void testGetAllCountriesTest() throws CountryNotFoundException {
+	private static void testGetAllCountriesTest()  {
 
 		LOGGER.info("Start");
 
-		Country country = countryService.findCountryByCode("IN");
+		Country country = countryService.findCountryByCode("JP");
 
 		LOGGER.debug("Country:{}", country);
 
@@ -57,7 +57,7 @@ public class OrmLearnApplication {
 	}
 
 	// METHOD TO TEST ADDCOUNTRY() IN COUNTRY SERVICE
-	private static void testAddCountry() throws CountryNotFoundException {
+	private static void testAddCountry()  {
 		LOGGER.info("start");
 		Country country = new Country("JP", "Japan");
 		countryService.addCountry(country);
@@ -68,7 +68,7 @@ public class OrmLearnApplication {
 	}
 
 	// METHOD TO TEST UPDATECOUNTRY() IN COUNTRY SERVICE
-	private static void testUpdateCountry() throws CountryNotFoundException {
+	private static void testUpdateCountry()  {
 		LOGGER.info("start");
 
 		countryService.updateCountry("KR", "Republic of Korea");
@@ -79,7 +79,7 @@ public class OrmLearnApplication {
 	}
 
 	// METHOD TO TEST DELETECOUNTRY() IN COUNTRY SERVICE
-	private static void testDeleteCountry() throws CountryNotFoundException {
+	private static void testDeleteCountry()   {
 		LOGGER.info("start");
 
 		Country countryFound = countryService.findCountryByCode("JP");
