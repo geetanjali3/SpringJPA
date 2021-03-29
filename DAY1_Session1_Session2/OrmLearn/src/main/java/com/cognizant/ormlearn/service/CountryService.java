@@ -33,17 +33,24 @@ public class CountryService {
 	@Transactional
 	//METHOD TO FIND A COUNTRY BY COUNTRY CODE
 	
-	public Country findCountryByCode(String countryCode) throws CountryNotFoundException
+	public Country findCountryByCode(String countryCode) 
 	{
-		Optional<Country> result = countryRepository.findById(countryCode);
-		if (!result.isPresent())
+		
+		
+		try
 		{
+			Optional<Country> result = countryRepository.findById(countryCode);
+			if (result.isPresent()) {
+				Country country = result.get();
+				return country;
+				
+			}
 			throw new CountryNotFoundException("Country Not Found");
 		}
-		else
+		catch(CountryNotFoundException e)
 		{
-			Country country = result.get();
-			return country;
+			System.out.println(e.getMessage());
+			return null;
 		}
 	}
 	
